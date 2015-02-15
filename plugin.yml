@@ -1,0 +1,11 @@
+name: SmoothWarps
+main: com.arrayprolc.warps.Warps
+version: 1.0
+description: Warps
+author: ArrayPro
+commands:
+     warp:
+     setwarp:
+     tp: 
+     warps:
+     delwarp:
