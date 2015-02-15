@@ -33,6 +33,8 @@ public class UtilPermission {
 			}
 		} catch (Exception ex) {
 			// It's probably a NPE, that's okay.
+			// Also, info.* isn't currently a viable permission, but it's mainly
+			// there as a placeholder at the moment.
 			Warps.getInstance().getConfig().set("allowedDefault", "info.*");
 			Warps.getInstance().saveConfig();
 		}
