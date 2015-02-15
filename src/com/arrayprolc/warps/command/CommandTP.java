@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.arrayprolc.warps.util.UtilPermission;
 import com.arrayprolc.warps.util.UtilTeleport;
 
 public class CommandTP {
@@ -14,7 +15,15 @@ public class CommandTP {
 		if (!label.equalsIgnoreCase("tp")) {
 			return false;
 		}
-
+		
+		if (sender instanceof Player) {
+			Player p = (Player) sender;
+			if (!UtilPermission.hasPermission(p, "tp")) {
+				p.sendMessage("§7You do not have permission.");
+				return true;
+			}
+		}
+		
 		if (!(sender instanceof Player)) {
 			sender.sendMessage("Console is not currently supported. Check back later.");
 			return false;
